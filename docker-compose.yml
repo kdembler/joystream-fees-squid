@@ -19,7 +19,26 @@ services:
       target: processor
     environment:
       - DB_HOST=db
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - CHAIN_URL=${CHAIN_URL}
     depends_on:
       - db
+    networks:
+      - default
+      - js
+
+  query-node:
+    build:
+      context: .
+      target: query-node
+    environment:
+      - DB_HOST=db
+    depends_on:
+      - db
+    ports:
+      - "127.0.0.1:${GQL_PORT}:4000"
+
+networks:
+  default: {}
+  js:
+    name: joystream_default
+    external: true

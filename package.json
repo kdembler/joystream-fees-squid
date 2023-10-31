@@ -6,7 +6,8 @@
   },
   "scripts": {
     "build": "rm -rf lib && tsc",
-    "processor:start": "squid-typeorm-migration apply && node --require=dotenv/config lib/main.js"
+    "processor:start": "squid-typeorm-migration apply && node --require=dotenv/config lib/main.js",
+    "query-node:start": "squid-graphql-server --dumb-cache in-memory --dumb-cache-ttl 1000 --dumb-cache-size 100 --dumb-cache-max-age 1000"
   },
   "dependencies": {
     "@subsquid/archive-registry": "^3.3.0",
