@@ -1,0 +1,7 @@
+type FeesInfo @entity {
+  id: ID!
+  balancesWithdrawSum: BigInt!
+  balancesDepositSum: BigInt!
+  balancesSlashedSum: BigInt!
+  balancesDustLostSum: BigInt!
+}

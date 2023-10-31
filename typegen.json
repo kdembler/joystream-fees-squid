@@ -1,0 +1,17 @@
+{
+  "outDir": "src/types",
+  "specVersions": "./joystreamMetadata.jsonl",
+  "pallets": {
+    "Balances": {
+      "events": [
+        "Withdraw",
+        "Deposit",
+        "Slashed",
+        "DustLost"
+      ],
+      "calls": [],
+      "storage": [],
+      "constants": []
+    }
+  }
+}
