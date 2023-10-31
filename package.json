@@ -5,7 +5,8 @@
     "node": ">=16"
   },
   "scripts": {
-    "build": "rm -rf lib && tsc"
+    "build": "rm -rf lib && tsc",
+    "processor:start": "squid-typeorm-migration apply && node --require=dotenv/config lib/main.js"
   },
   "dependencies": {
     "@subsquid/archive-registry": "^3.3.0",
