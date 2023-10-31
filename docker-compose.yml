@@ -19,5 +19,7 @@ services:
       target: processor
     environment:
       - DB_HOST=db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       - db
